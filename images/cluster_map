@@ -1,0 +1,36 @@
+digraph "Cluster Map" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Cluster Map" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	subgraph "cluster_Technocore
+Sidero master" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Technocore
+Sidero master" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"6ccf52625ecc4b49917555ebb666fbf4" [label="Technocore
+Raspi4 master" height=2.3 image="/usr/local/lib/python3.9/site-packages/resources/onprem/compute/server.png" shape=none]
+	}
+	subgraph "cluster_Hegira
+K8s cluster" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Hegira
+K8s cluster" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		e9f1dcba9f8a4c04b95b1fc87f7700b9 [label="Leela
+Raspi4
+Hegira master" height=2.7 image="/usr/local/lib/python3.9/site-packages/resources/onprem/compute/server.png" shape=none]
+		"27c6f8225488423ab48838e92d63e411" [label="Xerxes
+NUC
+Hegira worker" height=2.7 image="/usr/local/lib/python3.9/site-packages/resources/onprem/compute/server.png" shape=none]
+		"226c88aa1f664b34a82b0dfc137d182d" [label="SHODAN
+NUC
+Hegira worker" height=2.7 image="/usr/local/lib/python3.9/site-packages/resources/onprem/compute/server.png" shape=none]
+		"960a1c2fe11247078c9f7ce58a3402e6" [label="Tycho
+NUC
+Hegira worker" height=2.7 image="/usr/local/lib/python3.9/site-packages/resources/onprem/compute/server.png" shape=none]
+	}
+	e9f1dcba9f8a4c04b95b1fc87f7700b9 -> "27c6f8225488423ab48838e92d63e411" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	e9f1dcba9f8a4c04b95b1fc87f7700b9 -> "226c88aa1f664b34a82b0dfc137d182d" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	e9f1dcba9f8a4c04b95b1fc87f7700b9 -> "960a1c2fe11247078c9f7ce58a3402e6" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"6ccf52625ecc4b49917555ebb666fbf4" -> e9f1dcba9f8a4c04b95b1fc87f7700b9 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 style=dotted]
+	"6ccf52625ecc4b49917555ebb666fbf4" -> "27c6f8225488423ab48838e92d63e411" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 style=dotted]
+	"6ccf52625ecc4b49917555ebb666fbf4" -> "226c88aa1f664b34a82b0dfc137d182d" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 style=dotted]
+	"6ccf52625ecc4b49917555ebb666fbf4" -> "960a1c2fe11247078c9f7ce58a3402e6" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 style=dotted]
+}
